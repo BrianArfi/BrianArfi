@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AI-using vs AI-native</title>
+<!-- Illustration of the thesis in the profile README. Rendered by render.py to ../how-i-work.gif. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F1F3EE;--field:#0D453E;--ink:#072B27;--signal:#C8F751;--mute:#7C8B86;
+        --sans:'Archivo',system-ui,sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1100px;height:420px;overflow:hidden}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);position:relative}
+  .stage{position:absolute;inset:0;animation:fadeall .6s ease-in 8.3s both}
+  .abs{position:absolute}
+  .label{font-family:var(--mono);font-size:18px;font-weight:700;border:2px solid var(--ink);border-radius:999px;padding:4px 14px}
+  .l-using{left:40px;top:28px;background:#fff;color:var(--field)}
+  .l-native{left:590px;top:28px;background:var(--signal)}
+  .divider{left:549px;top:30px;width:3px;height:360px;background:repeating-linear-gradient(var(--ink) 0 8px,transparent 8px 16px);opacity:.25}
+
+  .box{background:#fff;border:3px solid var(--ink);border-radius:14px;box-shadow:5px 5px 0 var(--ink);
+    display:grid;place-items:center;font-weight:800;font-size:22px}
+  .you{left:50px;top:132px;width:120px;height:96px}
+  .chat{left:350px;top:132px;width:150px;height:96px}
+  .arrow{font-family:var(--mono);font-size:17px;font-weight:700;color:var(--field)}
+  .a-top{left:186px;top:118px}
+  .a-bot{left:186px;top:222px}
+  .line{background:var(--ink);height:3px}
+  .ln1{left:178px;top:150px;width:164px}
+  .ln2{left:178px;top:206px;width:164px}
+  .head1{left:330px;top:142px;width:0;height:0;border-left:14px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent}
+  .head2{left:178px;top:198px;width:0;height:0;border-right:14px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent}
+  .dot{left:0;top:0;width:18px;height:18px;border-radius:50%;background:var(--ink);box-shadow:0 0 0 4px var(--signal);
+    offset-path:path('M 178 151 L 342 151 L 342 207 L 178 207 Z');offset-rotate:0deg;
+    animation:travel 2s linear .5s 3 both}
+  .para{left:350px;top:246px;width:150px;text-align:center;font-family:var(--mono);font-size:18px;color:var(--field)}
+  .count{left:50px;top:296px;font-family:var(--mono);font-size:19px;font-weight:700;color:var(--field)}
+  .count span{display:inline-block;margin-left:10px;background:#fff;border:2px solid var(--ink);border-radius:8px;padding:1px 10px;
+    animation:pop .3s cubic-bezier(.3,1.6,.5,1) both}
+  .c1{animation-delay:2.5s!important}.c2{animation-delay:4.5s!important}.c3{animation-delay:6.5s!important}
+  .cap{top:350px;font-size:21px;font-weight:700;color:var(--field)}
+  .cap-l{left:50px}.cap-r{left:600px}
+
+  .in{left:600px;width:190px;height:50px;font-size:20px;animation:slide .5s cubic-bezier(.2,.8,.2,1) both}
+  .i1{top:104px;animation-delay:.6s}.i2{top:166px;animation-delay:.9s}.i3{top:228px;animation-delay:1.2s}
+  .fl{left:808px;top:180px;width:40px;animation:grow .4s ease-out 1.8s both;transform-origin:left center}
+  .fh{left:842px;top:172px;width:0;height:0;border-left:14px solid var(--ink);border-top:9px solid transparent;border-bottom:9px solid transparent;
+    animation:pop .3s ease-out 2.1s both}
+  .doc{left:872px;top:86px;width:190px;height:210px;background:#fff;border:3px solid var(--ink);border-radius:14px;
+    box-shadow:5px 5px 0 var(--ink);padding:18px 18px;animation:pop .45s cubic-bezier(.3,1.6,.5,1) 2.3s both}
+  .doc .t{height:14px;width:70%;background:var(--ink);border-radius:4px;margin-bottom:16px}
+  .doc .ls{height:9px;background:#C9D1C7;border-radius:4px;margin-bottom:11px;transform-origin:left center;animation:grow .35s ease-out both}
+  .ls:nth-child(2){width:100%;animation-delay:2.7s}.ls:nth-child(3){width:88%;animation-delay:2.9s}
+  .ls:nth-child(4){width:95%;animation-delay:3.1s}.ls:nth-child(5){width:60%;animation-delay:3.3s}
+  .done{left:888px;top:250px;background:var(--signal);border:2px solid var(--ink);border-radius:10px;padding:4px 12px;
+    font-weight:900;font-size:20px;animation:pop .4s cubic-bezier(.3,1.6,.5,1) 3.7s both}
+
+  @keyframes travel{from{offset-distance:0%}to{offset-distance:100%}}
+  @keyframes pop{0%{opacity:0;transform:scale(.4)}100%{opacity:1;transform:none}}
+  @keyframes slide{from{opacity:0;transform:translateX(-30px)}to{opacity:1;transform:none}}
+  @keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes fadeall{from{opacity:1}to{opacity:0}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="abs label l-using">AI-USING</div>
+  <div class="abs label l-native">AI-NATIVE</div>
+  <div class="abs divider"></div>
+
+  <div class="abs box you">you</div>
+  <div class="abs box chat">chat</div>
+  <div class="abs line ln1"></div><div class="abs head1"></div>
+  <div class="abs line ln2"></div><div class="abs head2"></div>
+  <div class="abs arrow a-top">paste the task</div>
+  <div class="abs arrow a-bot">copy it back</div>
+  <div class="abs dot"></div>
+  <div class="abs para">a paragraph</div>
+  <div class="abs count">by hand:<span class="c1">1</span><span class="c2">2</span><span class="c3">3</span></div>
+  <div class="abs cap cap-l">Works. Never compounds.</div>
+
+  <div class="abs box in i1">your context</div>
+  <div class="abs box in i2">your tools</div>
+  <div class="abs box in i3">your SOPs</div>
+  <div class="abs line fl"></div><div class="abs fh"></div>
+  <div class="abs doc"><div class="t"></div><div class="ls"></div><div class="ls"></div><div class="ls"></div><div class="ls"></div></div>
+  <div class="abs done">finished doc</div>
+  <div class="abs cap cap-r">Set up once. It finishes the job.</div>
+</div>
+</body>
+</html>

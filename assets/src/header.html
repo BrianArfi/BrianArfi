@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>BrianArfi profile header</title>
+<!-- Illustration, not a screenshot. Rendered by render.py to ../header.gif (animated) and ../header.png (still).
+     Each row pairs a piece of paperwork with the open-source repo that handles it; the pairings follow
+     each repo's own README. -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{--paper:#F1F3EE;--field:#0D453E;--ink:#072B27;--signal:#C8F751;--mute:#7C8B86;
+        --sans:'Archivo',system-ui,sans-serif;--mono:'JetBrains Mono',Consolas,monospace}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{width:1400px;height:500px;overflow:hidden}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);position:relative}
+
+  .copy{position:absolute;left:64px;top:84px;width:600px}
+  .kicker{font-family:var(--mono);font-size:20px;font-weight:700;color:var(--field);margin-bottom:26px;
+    display:inline-flex;align-items:center;gap:12px}
+  .kicker i{width:14px;height:14px;border-radius:3px;background:var(--signal);border:3px solid var(--ink)}
+  h1{font-size:62px;line-height:1.06;font-weight:900;letter-spacing:-.035em}
+  h1 .hl{position:relative;z-index:0;white-space:nowrap}
+  h1 .hl:after{content:"";position:absolute;left:-6px;right:-6px;bottom:4px;height:22px;background:var(--signal);
+    z-index:-1;border-radius:4px;transform-origin:left center;animation:sweep .7s cubic-bezier(.2,.8,.2,1) .2s both}
+  .sub{margin-top:28px;font-size:24px;line-height:1.35;font-weight:600;color:var(--field);width:560px}
+  .meta{margin-top:26px;font-family:var(--mono);font-size:18px;font-weight:500;color:var(--field)}
+
+  .panel{position:absolute;left:712px;top:44px;width:624px;height:412px;background:#fff;border:3px solid var(--ink);
+    border-radius:18px;box-shadow:6px 6px 0 var(--ink);overflow:hidden;animation:fadeall .6s ease-in 8.3s both}
+  .bar{height:52px;background:var(--ink);display:flex;align-items:center;padding:0 20px;gap:9px}
+  .bar b{width:13px;height:13px;border-radius:50%;background:#2E5A53}
+  .bar span{margin-left:12px;font-family:var(--mono);font-size:17px;font-weight:700;color:#E8EDE6}
+  .bar em{margin-left:auto;font-style:normal;font-family:var(--mono);font-size:15px;font-weight:700;color:var(--ink);
+    background:var(--signal);border-radius:8px;padding:3px 10px}
+  .rows{padding:12px 22px 0}
+  .row{display:flex;align-items:center;height:57px;border-bottom:2px dashed #D8DED6;
+    animation:rowin .45s cubic-bezier(.2,.8,.2,1) both}
+  .row:last-child{border-bottom:0}
+  .task{position:relative;font-size:21px;font-weight:700;white-space:nowrap}
+  .task:after{content:"";position:absolute;left:-3px;right:-3px;top:52%;height:3px;background:var(--mute);
+    transform-origin:left center;animation:strike .35s ease-out both}
+  .hand{margin-left:12px;font-family:var(--mono);font-size:16px;font-weight:700;color:var(--mute);
+    animation:hand .3s ease-out both}
+  .chip{margin-left:auto;font-family:var(--mono);font-size:16px;font-weight:700;background:var(--signal);color:var(--ink);
+    border:2px solid var(--ink);border-radius:999px;padding:5px 13px;white-space:nowrap;
+    animation:pop .45s cubic-bezier(.3,1.6,.5,1) both}
+
+  /* row i: appears at .4 + .25i, strike + chip at 2.2 + .55i */
+  .r1{animation-delay:.40s}.r2{animation-delay:.65s}.r3{animation-delay:.90s}.r4{animation-delay:1.15s}.r5{animation-delay:1.40s}.r6{animation-delay:1.65s}
+  .r1 .task:after,.r1 .hand{animation-delay:2.20s}.r1 .chip{animation-delay:2.30s}
+  .r2 .task:after,.r2 .hand{animation-delay:2.75s}.r2 .chip{animation-delay:2.85s}
+  .r3 .task:after,.r3 .hand{animation-delay:3.30s}.r3 .chip{animation-delay:3.40s}
+  .r4 .task:after,.r4 .hand{animation-delay:3.85s}.r4 .chip{animation-delay:3.95s}
+  .r5 .task:after,.r5 .hand{animation-delay:4.40s}.r5 .chip{animation-delay:4.50s}
+  .r6 .task:after,.r6 .hand{animation-delay:4.95s}.r6 .chip{animation-delay:5.05s}
+
+  @keyframes sweep{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes rowin{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+  @keyframes strike{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+  @keyframes hand{from{opacity:1}to{opacity:0}}
+  @keyframes pop{0%{opacity:0;transform:scale(.4)}100%{opacity:1;transform:none}}
+  @keyframes fadeall{from{opacity:1}to{opacity:0}}
+</style>
+</head>
+<body>
+  <div class="copy">
+    <div class="kicker"><i></i>github.com/BrianArfi</div>
+    <h1>AI that does<br><span class="hl">the paperwork.</span></h1>
+    <div class="sub">Open-source AI tools for knowledge workers and product people. Built for my own job first.</div>
+    <div class="meta">Brian Arfi Faridhi &middot; Product Director &middot; Jakarta</div>
+  </div>
+
+  <div class="panel">
+    <div class="bar"><b></b><b></b><b></b><span>my paperwork</span><em>handled by</em></div>
+    <div class="rows">
+      <div class="row r1"><span class="task">Meeting notes</span><span class="hand">by hand</span><span class="chip">ai-second-brain</span></div>
+      <div class="row r2"><span class="task">Weekly report</span><span class="hand">by hand</span><span class="chip">ai-second-brain</span></div>
+      <div class="row r3"><span class="task">Edit a shared Google Doc</span><span class="hand">by hand</span><span class="chip">gdoc-surgical</span></div>
+      <div class="row r4"><span class="task">Feedback on a prototype</span><span class="hand">by hand</span><span class="chip">ai-prototype-kit</span></div>
+      <div class="row r5"><span class="task">Drafts that sound like me</span><span class="hand">by hand</span><span class="chip">voiceprint</span></div>
+      <div class="row r6"><span class="task">Natural Indonesian copy</span><span class="hand">by hand</span><span class="chip">id-voice-gate</span></div>
+    </div>
+  </div>
+</body>
+</html>
